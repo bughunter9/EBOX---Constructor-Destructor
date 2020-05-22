@@ -1,0 +1,11 @@
+1. Compiler error
+2. 	Constructor called	
+	Destructor called
+3. Copy constructor
+4. ~
+5. constructor is used to initialize all class data members
+6. only pass-by-reference
+7. Student s[2]={Student("Joyce"), Student("Merlin")}
+8. 20
+9. Only one
+10. All of the mentioned
