@@ -1,0 +1,32 @@
+#include<iostream>
+#include<string>
+using namespace std;
+class ContactDetails
+{
+    private:
+    string mobile;
+    string alternateMobile;
+    string landLine;
+    string email;
+    public:
+    ContactDetails(){}
+    ContactDetails(string mobile,string alternateMobile,string landLine,string email)
+    {
+        mobile=mobile;
+        alternateMobile=alternateMobile;
+        landLine=landLine;
+        email=email;
+    }
+        // fill code
+        friend  bool validateEmail(string e1);
+        friend bool findDuplicates(string a, string b);
+    void display(bool emailstatus,bool mobilestatus)
+    {
+        //fill code
+        if(emailstatus==true&&mobilestatus==true)
+        {
+            cout<<"Registered Successfully!!!";
+        }
+        else cout<<"Please check your details";
+    }
+};
