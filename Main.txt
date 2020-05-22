@@ -1,0 +1,31 @@
+#include <iostream>
+#include<string.h>
+#include "User.cpp"
+using namespace std;
+string validate(string uname,string pword){
+    User u1;
+    User *u = u1.getUserDetails();
+    //Fill code
+    for(int i=0;i<5;i++){
+        if(u[i].getUserName()==uname){
+            if(u[i].getPassword()==pword){
+                return uname;
+            }
+            else return ("No");
+        }
+        else return ("No");
+    }
+}
+int main() {
+    //Fill code
+    string name, userName, password;
+    cout<<"Enter name:";
+    cin>>name;
+    cout<<"\nEnter the username:";
+    cin>>userName;
+    cout<<"\nEnter the password:\n";
+    cin>>password;
+    User use(name, userName, password);
+    string temp=validate(userName, password);
+    use.display(temp);
+}

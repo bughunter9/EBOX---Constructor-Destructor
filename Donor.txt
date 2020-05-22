@@ -1,0 +1,46 @@
+#include <cstring>
+#include<iostream>
+#include<string>
+#include<stdio.h>
+
+using namespace std;
+
+class Donor
+{
+     public:
+        string name;
+        int age,no_of_units_donated;
+        double height,weight;
+    public:
+    Donor(){
+        cout<<"Welcome to the Blood Bank\n";
+    }
+    void setName(string n){
+        name=n;
+    }
+    void setAge(int a){
+        age=a;
+    }
+    void setHeight(double h){
+        height=h;
+    }
+    void setWeight(double w){
+        weight=w;
+    }
+    void setUnits(int u){
+        no_of_units_donated=u;
+    }
+	void display(){
+		// fill the code here
+        cout<<"Donor details:";
+        cout<<"\n"<<name;
+        cout<<"\n"<<age;
+        cout<<"\n"<<height;
+        cout<<"\n"<<weight<<".0";
+        cout<<"\n"<<no_of_units_donated;
+	}
+    ~Donor(){
+        cout<<"\nThank you for donating the Blood";
+    }
+// fill the code here
+};

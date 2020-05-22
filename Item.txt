@@ -1,0 +1,65 @@
+#include <cstring>
+#include<iostream>
+#include<string>
+#include<stdio.h>
+
+using namespace std;
+
+class Item
+{
+    private:
+    string itemId,itemName,itemType,itemVendor;
+	public:
+	string getItemId()
+	{
+	//Fill code
+    return itemId;
+	}
+	string getItemName()
+	{
+	//Fill code
+    return itemName;
+	}
+	string getItemType()
+	{
+	//Fill code
+    return itemType;
+	}
+	string getItemVendor()
+	{
+	//Fill code
+    return itemVendor;
+	}
+	void setItemId(string id)
+	{
+	itemId=id;
+	}
+	void setItemName(string name)
+	{
+	itemName=name;
+	}
+	void setItemType(string type)
+	{
+	itemType=type;
+	}
+	void setitemVendor(string vendor)
+	{
+    itemVendor=vendor;
+	}
+	
+
+Item()
+{
+//Fill code
+itemType="Electricals";
+itemVendor="Arun electricals";
+}
+Item(string id,string name,string type,string vendor)
+{
+//Fill code
+itemId=id;
+itemName=name;
+itemType=type;
+itemVendor=vendor;
+}
+};

@@ -1,0 +1,83 @@
+#include <iostream>
+#include<string.h>
+using namespace std;
+class User{
+    private:
+        string name;
+        string userName;
+        string password;
+    public:
+        User()
+        {
+            
+        }
+        User(string n,string un,string p)
+        {
+            //Fill code
+            name=n;
+            userName=un;
+            password=p;
+        }
+        void setName(string n)
+        {
+            name=n;
+        }
+        void setUserName(string un)
+        {
+            userName=un;
+        }
+        void setPassword(string p)
+        {
+            password=p;
+        }
+        string getName()
+        {
+            //Fill code
+            return name;
+        }
+        string getUserName()
+        {
+            //Fill code
+            return userName;
+        }
+        string getPassword()
+        {
+            //Fill code
+            return password;
+        
+        }
+    
+        User * getUserDetails(){
+            User *user = new User[5];
+            user[0]= User("Abi","Abinaya","abi123");
+            user[1]= User("Arun","Arunsoorya","arun456");
+            user[2]= User("Sbi","Sbiharan","sbi789");
+            user[3]= User("Sidhu","Siddarth","sid123");
+            user[4]= User("Vivi","Viveka","vivi456");
+            return user;
+        }
+      	//Fill code
+        friend string validate(string userName, string passoword);  
+        void display(string s) {
+            //Fill code
+            if(s=="No"){
+                cout<<"Invalid username/password";
+            }
+            else {
+                
+                    if(s=="Abinaya")
+                    cout<<"Hiii..."<<"Abi"<<" !! Welcome to the event!!! ";
+                    else if(s=="Arunsoorya")
+                    cout<<"Hiii..."<<"Arun"<<" !! Welcome to the event!!! ";
+                    else if(s=="Sbiharan")
+                    cout<<"Hiii..."<<"Sbi"<<" !! Welcome to the event!!! ";
+                    else if(s=="Siddarth")
+                    cout<<"Hiii..."<<"Sidhu"<<" !! Welcome to the event!!! ";
+                    else if(s=="Viveka")
+                    cout<<"Hiii..."<<"Vivi"<<" !! Welcome to the event!!! ";
+                
+                
+            }
+        }
+        
+};

@@ -1,0 +1,25 @@
+#include <iostream>
+#include <string>
+#include "Event.cpp"
+using namespace std;
+class EventExport{
+    public:
+    void exportCSVFormat(Event *e,int num)
+    {
+        //fill code
+        for(int i=0; i<num; i++){
+            cout<<e[i].getName()<<", "<<e[i].getDetail()<<", "<<e[i].getType()<<", "<<e[i].getOrganiser()<<", "<<e[i].getAttendeesCount()<<", "<<e[i].getProjectedExpenses()<<"\n";
+        }
+    }
+    
+    void exportNameOrganiserInfo(Event *e,int num,string type)
+    {
+        //fill code
+        for(int i=0; i<num; i++){
+            if(type==e[i].getType()){
+                cout<<e[i].getName()<<", "<<e[i].getOrganiser()<<"\n";
+            }
+        }
+        
+    }
+};

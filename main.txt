@@ -1,52 +1,64 @@
-#include "ContactDetails.cpp"
 #include <iostream>
 #include<string>
+#include "EventExport.cpp"
 using namespace std;
-bool  validateEmail(string e1)
-{
-  //fill code
-  char c='@';
-  string s=".com";
-  int a=0, b=0;
-  size_t found = e1.find(c);
-  size_t found1 = e1.find(s);
-    //cout<<found1;
-    if(found<50){
-        a=1;
-    }
-    if(found1<100){
-        b=1;
-    }
-    if(a==1&&b==1)
-        return true;
-    else return false;
-}
-
-bool  findDuplicates(string a,string b)
-{
-    //fill code
-    if(a==b) return false;
-    else return true;
-}
 int main()
 {
-
-    string mobno,almobno,landline,id;
-    bool emailid,dnum;
-    cout<<"Enter details for Registration:"<<endl;
-    cout<<"Enter Mobile Number:"<<endl;
-    cin>>mobno;
-    cout<<"Enter Alternate Mobile Number:"<<endl;
-    cin>>almobno;
-    cout<<"Enter Landline Number:"<<endl;
-    cin>>landline;
-    cout<<"Enter Email-Id:"<<endl;
-    cin>>id;
-    //fill code
-    ContactDetails C(mobno, almobno, landline, id);
-    emailid=validateEmail(id);
-    dnum=findDuplicates(mobno, almobno);
-    ContactDetails C1;
-    C1.display(emailid, dnum);
+  //fill code
+  int n;
+  cout<<"Enter the number of events :";
+  cin>>n;
+  Event e[10];
+  EventExport x;
+  string name, details, type, organiser;
+  int attendeesCount, ch;
+  double projectedExpenses;
+  for(int i=0; i<n; i++){
+      cout<<"\nEnter the details of event "<<i+1;
+      cout<<"\nName :";
+      cin.ignore();
+      getline(cin, name);
+      e[i].setName(name);
+      cout<<"\nDetail :";
+      //cin.ignore();
+      getline(cin, details);
+      e[i].setDetail(details);
+      cout<<"\nType :";
+      cin>>type;
+      e[i].setType(type);
+      cout<<"\nOrganiser :";
+      cin>>organiser;
+      e[i].setOrganiser(organiser);
+      cout<<"\nAttendees Count :";
+      cin>>attendeesCount;
+      e[i].setAttendeesCount(attendeesCount);
+      cout<<"\nProjected Expenses :";
+      cin>>projectedExpenses;
+      e[i].setProjectedExpenses(projectedExpenses);
+  }
+  cout<<"\n1. Export all the event details in CSV format";
+  cout<<"\n2. Export name and organiser of the given event type";
+  cin>>ch;
+  switch(ch){
+      case 1:
+          {
+              cout<<"\n";
+              x.exportCSVFormat(e, n);
+          }
+          break;
+        case 2:
+            {string ty;
+            cout<<"\nEnter the type";
+            cin>>ty;
+            cout<<"\n";
+            x.exportNameOrganiserInfo(e, n, ty);}
+            break;
+        default:
+            cout<<"\nInvalid choice";
+            break;
+  }
     return 0;
 }
+
+
+
